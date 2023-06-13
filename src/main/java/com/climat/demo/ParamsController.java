@@ -21,4 +21,17 @@ public class ParamsController {
         }
         return paramsModel;
     }
+
+    public void save(ParamsModel paramsModel) {
+//        ResultSet rs = DBConnection.getInstance().getStatement().executeQuery(
+//                "INSERT INTO table_name (param_id, air_max, air_min, wet_min, wet_max, temp_max, temp_min)\n" +
+//                "VALUES (1, '', 'value2', ...)\n" +
+//                "ON DUPLICATE KEY UPDATE\n" +
+//                "    air_max = VALUES(air_max),\n" +
+//                "    air_min = VALUES(column2),\n" +
+//                "    wet_min = VALUES(wet_min),\n" +
+//                "    air_min = VALUES(column2),\n" +
+//                "    air_min = VALUES(column2),\n" +
+//                "    air_min = VALUES(column2),\n");
+    }
 }

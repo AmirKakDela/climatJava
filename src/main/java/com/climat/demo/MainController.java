@@ -5,9 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -32,8 +35,11 @@ public class MainController implements Initializable {
     private TextField wetMin;
 
     @FXML
-    void save(ActionEvent event) {
+    private Text date;
 
+    @FXML
+    void save(ActionEvent event) {
+        System.out.println("save");
     }
 
     @Override
@@ -41,7 +47,10 @@ public class MainController implements Initializable {
         try {
             ParamsModel paramsModel = paramsController.getParams(1);
             setTextFields(paramsModel);
-            System.out.println(paramsModel.getAirMax());
+            Date currentDate = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+            String formattedDate = dateFormat.format(currentDate);
+            date.setText(formattedDate);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

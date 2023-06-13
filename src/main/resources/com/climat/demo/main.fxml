@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.climat.demo.MainController">
    <children>
@@ -25,5 +26,7 @@
       <TextField fx:id="airMin" layoutX="42.0" layoutY="204.0" prefHeight="26.0" prefWidth="34.0" />
       <TextField fx:id="airMax" layoutX="123.0" layoutY="204.0" prefHeight="26.0" prefWidth="34.0" />
       <Button layoutX="16.0" layoutY="250.0" mnemonicParsing="false" onAction="#save" text="Сохранить" />
+      <Text fx:id="date" layoutX="105.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="123" />
+      <Text layoutX="21.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата и время:" />
    </children>
 </AnchorPane>
