@@ -25,8 +25,10 @@ public class Controller implements Initializable {
     void login(ActionEvent event) throws SQLException {
         String login = login_login.getText();
         String password = login_password.getText();
-        System.out.println(login);
-        userController.login(login, password);
+
+        if(userController.login(login, password)) {
+
+        };
     }
 
     @Override
