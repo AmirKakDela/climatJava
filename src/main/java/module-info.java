@@ -4,6 +4,7 @@ module com.climat.demo {
 
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
+    requires java.sql;
 
     opens com.climat.demo to javafx.fxml;
     exports com.climat.demo;

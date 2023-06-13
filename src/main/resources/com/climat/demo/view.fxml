@@ -9,7 +9,7 @@
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
-            prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+            prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.climat.demo.Controller">
     <children>
         <Text layoutX="242.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Авторизация">
             <font>
