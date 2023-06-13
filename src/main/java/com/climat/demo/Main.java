@@ -1,5 +1,6 @@
 package com.climat.demo;
 
+import com.climat.demo.database.DBConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,23 +21,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        connectDB();
+        DBConnection.getInstance();
         launch();
     }
 
-    public static void connectDB() {
-        String url = "jdbc:mysql://localhost:3306/climat";
-        String user = "root";
-        String password = "amir";
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users");
-
-            while (rs.next()) {
-                System.out.println(rs.getInt("user_id") + " " + rs.getString("user_login"));
-            }
-        } catch (SQLException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
 }
