@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.climat.demo.MainController">
    <children>
-      <Button layoutX="334.0" layoutY="224.0" mnemonicParsing="false" text="AA" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bdd4ea" height="38.0" layoutX="-6.0" stroke="BLACK" strokeType="INSIDE" width="707.0" />
+      <TextField fx:id="tempMin" layoutX="42.0" layoutY="76.0" prefHeight="27.0" prefWidth="34.0" />
+      <Label layoutX="14.0" layoutY="49.0" prefHeight="18.0" prefWidth="90.0" text="Температура C" />
+      <Label layoutX="14.0" layoutY="81.0" prefHeight="18.0" prefWidth="22.0" text="Min" />
+      <Label layoutX="93.0" layoutY="81.0" text="Max" />
+      <Label layoutX="14.0" layoutY="112.0" text="Влажность %" />
+      <Label layoutX="14.0" layoutY="179.0" text="Качество воздуха %" />
+      <Label layoutX="15.0" layoutY="148.0" text="Min" />
+      <Label layoutX="93.0" layoutY="148.0" text="Max" />
+      <Label layoutX="15.0" layoutY="209.0" text="Min" />
+      <Label layoutX="93.0" layoutY="209.0" text="Max" />
+      <TextField fx:id="tempMax" layoutX="123.0" layoutY="77.0" prefHeight="26.0" prefWidth="34.0" />
+      <TextField fx:id="wetMin" layoutX="42.0" layoutY="143.0" prefHeight="26.0" prefWidth="34.0" />
+      <TextField fx:id="wetMax" layoutX="123.0" layoutY="143.0" prefHeight="26.0" prefWidth="34.0" />
+      <TextField fx:id="airMin" layoutX="42.0" layoutY="204.0" prefHeight="26.0" prefWidth="34.0" />
+      <TextField fx:id="airMax" layoutX="123.0" layoutY="204.0" prefHeight="26.0" prefWidth="34.0" />
+      <Button layoutX="16.0" layoutY="250.0" mnemonicParsing="false" onAction="#save" text="Сохранить" />
    </children>
 </AnchorPane>

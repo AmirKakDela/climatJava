@@ -33,9 +33,7 @@ public class Controller implements Initializable {
 
         if (!login.equals("") && !password.equals("")) {
             boolean isAuth = userController.login(login, password);
-            System.out.println(isAuth);
             if (isAuth) {
-                System.out.println("success");
                 login_login.getScene().getWindow().hide();
                 openForm();
             }
