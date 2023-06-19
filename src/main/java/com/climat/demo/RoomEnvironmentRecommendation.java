@@ -65,33 +65,33 @@ public class RoomEnvironmentRecommendation {
     }
 
     public static double[] getRecommendedWet(TimeOfYear currentTimeOfYear, SystemPower currentSystemPower) {
-        double[] humidityRange = new double[2];
+        double[] wetRange = new double[2];
 
         if (currentTimeOfYear == TimeOfYear.Лето) {
             if (currentSystemPower == SystemPower.Высокая) {
-                humidityRange[0] = 50.0;
-                humidityRange[1] = 60.0;
+                wetRange[0] = 50.0;
+                wetRange[1] = 60.0;
             } else if (currentSystemPower == SystemPower.Средняя) {
-                humidityRange[0] = 45.0;
-                humidityRange[1] = 55.0;
+                wetRange[0] = 45.0;
+                wetRange[1] = 55.0;
             } else { // Низкая
-                humidityRange[0] = 40.0;
-                humidityRange[1] = 50.0;
+                wetRange[0] = 40.0;
+                wetRange[1] = 50.0;
             }
         } else {
             if (currentSystemPower == SystemPower.Высокая) {
-                humidityRange[0] = 45.0;
-                humidityRange[1] = 55.0;
+                wetRange[0] = 45.0;
+                wetRange[1] = 55.0;
             } else if (currentSystemPower == SystemPower.Средняя) {
-                humidityRange[0] = 40.0;
-                humidityRange[1] = 50.0;
+                wetRange[0] = 40.0;
+                wetRange[1] = 50.0;
             } else { // Низкая
-                humidityRange[0] = 35.0;
-                humidityRange[1] = 45.0;
+                wetRange[0] = 35.0;
+                wetRange[1] = 45.0;
             }
         }
 
-        return humidityRange;
+        return wetRange;
     }
 
     public static double[] getRecommendedAirQuality(TimeOfYear currentTimeOfYear, Fullness currentFullness) {
