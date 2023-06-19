@@ -17,6 +17,19 @@ public class MainController implements Initializable {
     ParamsController paramsController = new ParamsController();
 
     @FXML
+    private TextField suggestTempMin;
+    @FXML
+    private TextField suggestTempMax;
+    @FXML
+    private TextField suggestWetMin;
+    @FXML
+    private TextField suggestWetMax;
+    @FXML
+    private TextField suggestAirMin;
+    @FXML
+    private TextField suggestAirMax;
+
+    @FXML
     private TextField airMax;
 
     @FXML
@@ -63,5 +76,9 @@ public class MainController implements Initializable {
         tempMax.setText(paramsModel.getTempMax());
         wetMin.setText(paramsModel.getWetMin());
         wetMax.setText(paramsModel.getWetMax());
+    }
+
+    public void close(ActionEvent actionEvent) {
+        date.getScene().getWindow().hide();
     }
 }
