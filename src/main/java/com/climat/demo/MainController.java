@@ -148,5 +148,18 @@ public class MainController implements Initializable {
         // Инициализация списка systemPower
         ObservableList<SystemPower> systemPowerList = FXCollections.observableArrayList(SystemPower.values());
         systemPower.setItems(systemPowerList);
+
+        timeOfYear.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            setSuggestParamsByListValues();
+        });
+        timeOfDay.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            setSuggestParamsByListValues();
+        });
+        systemPower.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            setSuggestParamsByListValues();
+        });
+        fullness.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            setSuggestParamsByListValues();
+        });
     }
 }
