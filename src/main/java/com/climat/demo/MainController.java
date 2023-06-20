@@ -89,6 +89,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setCurrentDate();
         initializeLists();
         setListenersOnLists();
         setSuggestParamsByListValues();
@@ -96,10 +97,6 @@ public class MainController implements Initializable {
         try {
             ParamsModel paramsModel = paramsController.getParams(1);
             setTextFields(paramsModel);
-            Date currentDate = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
-            String formattedDate = dateFormat.format(currentDate);
-            date.setText(formattedDate);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -202,5 +199,12 @@ public class MainController implements Initializable {
         // Генерация случайного значения для качества воздуха (от 30 до 90)
         int airQuality = random.nextInt(61) + 30;
         realAir.setText(String.valueOf(airQuality));
+    }
+
+    public void setCurrentDate() {
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        String formattedDate = dateFormat.format(currentDate);
+        date.setText(formattedDate);
     }
 }
