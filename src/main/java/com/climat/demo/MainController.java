@@ -119,15 +119,15 @@ public class MainController implements Initializable {
         SystemPower currentSystemPower = systemPower.getSelectionModel().getSelectedItem();
         Fullness currentFullness = fullness.getSelectionModel().getSelectedItem();
 
-        double[] recommendedTemperature = RoomEnvironmentRecommendation.getRecommendedTemperature(currentTimeOfDay, currentTimeOfYear);
+        int[] recommendedTemperature = RoomEnvironmentRecommendation.getRecommendedTemperature(currentTimeOfDay, currentTimeOfYear);
         suggestTempMin.setText(String.valueOf(recommendedTemperature[0]));
         suggestTempMax.setText(String.valueOf(recommendedTemperature[1]));
 
-        double[] recommendedWet = RoomEnvironmentRecommendation.getRecommendedWet(currentTimeOfYear, currentSystemPower);
+        int[] recommendedWet = RoomEnvironmentRecommendation.getRecommendedWet(currentTimeOfYear, currentSystemPower);
         suggestWetMin.setText(String.valueOf(recommendedWet[0]));
         suggestWetMax.setText(String.valueOf(recommendedWet[1]));
 
-        double[] recommendedAir = RoomEnvironmentRecommendation.getRecommendedAirQuality(currentTimeOfYear, currentFullness);
+        int[] recommendedAir = RoomEnvironmentRecommendation.getRecommendedAirQuality(currentTimeOfYear, currentFullness);
         suggestAirMin.setText(String.valueOf(recommendedAir[0]));
         suggestAirMax.setText(String.valueOf(recommendedAir[1]));
     }

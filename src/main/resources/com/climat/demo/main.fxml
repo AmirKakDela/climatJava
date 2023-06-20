@@ -64,16 +64,10 @@
         <Label layoutX="612.0" layoutY="246.0" text="Max"/>
         <TextField fx:id="suggestAirMin" layoutX="552.0" layoutY="264.0" prefHeight="26.0" prefWidth="34.0"/>
         <TextField fx:id="suggestAirMax" layoutX="606.0" layoutY="264.0" prefHeight="26.0" prefWidth="34.0"/>
-        <ListView fx:id="timeOfYear" layoutX="186.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0">
-        </ListView>
-        <ListView fx:id="timeOfDay" layoutX="281.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0">
-        </ListView>
-        <ListView fx:id="fullness" layoutX="379.0" layoutY="82.0" prefHeight="112.0" prefWidth="81.0">
-
-        </ListView>
-        <ListView fx:id="systemPower" layoutX="186.0" layoutY="248.0" prefHeight="112.0" prefWidth="81.0">
-
-        </ListView>
+        <ListView fx:id="timeOfYear" layoutX="186.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0"/>
+        <ListView fx:id="timeOfDay" layoutX="281.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0"/>
+        <ListView fx:id="fullness" layoutX="379.0" layoutY="82.0" prefHeight="112.0" prefWidth="81.0"/>
+        <ListView fx:id="systemPower" layoutX="186.0" layoutY="248.0" prefHeight="112.0" prefWidth="81.0"/>
         <TextField fx:id="wetMin311" layoutX="456.0" layoutY="251.0" prefHeight="26.0" prefWidth="34.0"/>
         <TextField fx:id="wetMin3111" layoutX="456.0" layoutY="290.0" prefHeight="26.0" prefWidth="34.0"/>
         <TextField fx:id="wetMin31111" layoutX="456.0" layoutY="330.0" prefHeight="26.0" prefWidth="34.0"/>

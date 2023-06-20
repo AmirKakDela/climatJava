@@ -28,96 +28,96 @@ enum Fullness {
 }
 
 public class RoomEnvironmentRecommendation {
-    public static double[] getRecommendedTemperature(TimeOfDay currentTimeOfDay, TimeOfYear currentTimeOfYear) {
-        double[] temperatureRange = new double[2];
+    public static int[] getRecommendedTemperature(TimeOfDay currentTimeOfDay, TimeOfYear currentTimeOfYear) {
+        int[] temperatureRange = new int[2];
 
         if (currentTimeOfYear == TimeOfYear.Зима) {
             if (currentTimeOfDay == TimeOfDay.Утро) {
-                temperatureRange[0] = 18.0;
-                temperatureRange[1] = 20.0;
+                temperatureRange[0] = 18;
+                temperatureRange[1] = 20;
             } else if (currentTimeOfDay == TimeOfDay.День) {
-                temperatureRange[0] = 20.0;
-                temperatureRange[1] = 22.0;
+                temperatureRange[0] = 20;
+                temperatureRange[1] = 22;
             } else if (currentTimeOfDay == TimeOfDay.Вечер) {
-                temperatureRange[0] = 19.0;
-                temperatureRange[1] = 21.0;
+                temperatureRange[0] = 19;
+                temperatureRange[1] = 21;
             } else { // НОЧЬ
-                temperatureRange[0] = 17.0;
-                temperatureRange[1] = 19.0;
+                temperatureRange[0] = 17;
+                temperatureRange[1] = 19;
             }
         } else { // Остальные времена года
             if (currentTimeOfDay == TimeOfDay.Утро) {
-                temperatureRange[0] = 21.0;
-                temperatureRange[1] = 23.0;
+                temperatureRange[0] = 21;
+                temperatureRange[1] = 23;
             } else if (currentTimeOfDay == TimeOfDay.День) {
-                temperatureRange[0] = 23.0;
-                temperatureRange[1] = 25.0;
+                temperatureRange[0] = 23;
+                temperatureRange[1] = 25;
             } else if (currentTimeOfDay == TimeOfDay.Вечер) {
-                temperatureRange[0] = 22.0;
-                temperatureRange[1] = 24.0;
+                temperatureRange[0] = 22;
+                temperatureRange[1] = 24;
             } else { // НОЧЬ
-                temperatureRange[0] = 20.0;
-                temperatureRange[1] = 22.0;
+                temperatureRange[0] = 20;
+                temperatureRange[1] = 22;
             }
         }
 
         return temperatureRange;
     }
 
-    public static double[] getRecommendedWet(TimeOfYear currentTimeOfYear, SystemPower currentSystemPower) {
-        double[] wetRange = new double[2];
+    public static int[] getRecommendedWet(TimeOfYear currentTimeOfYear, SystemPower currentSystemPower) {
+        int[] wetRange = new int[2];
 
         if (currentTimeOfYear == TimeOfYear.Лето) {
             if (currentSystemPower == SystemPower.Высокая) {
-                wetRange[0] = 50.0;
-                wetRange[1] = 60.0;
+                wetRange[0] = 50;
+                wetRange[1] = 60;
             } else if (currentSystemPower == SystemPower.Средняя) {
-                wetRange[0] = 45.0;
-                wetRange[1] = 55.0;
+                wetRange[0] = 45;
+                wetRange[1] = 55;
             } else { // Низкая
-                wetRange[0] = 40.0;
-                wetRange[1] = 50.0;
+                wetRange[0] = 40;
+                wetRange[1] = 50;
             }
         } else {
             if (currentSystemPower == SystemPower.Высокая) {
-                wetRange[0] = 45.0;
-                wetRange[1] = 55.0;
+                wetRange[0] = 45;
+                wetRange[1] = 55;
             } else if (currentSystemPower == SystemPower.Средняя) {
-                wetRange[0] = 40.0;
-                wetRange[1] = 50.0;
+                wetRange[0] = 40;
+                wetRange[1] = 50;
             } else { // Низкая
-                wetRange[0] = 35.0;
-                wetRange[1] = 45.0;
+                wetRange[0] = 35;
+                wetRange[1] = 45;
             }
         }
 
         return wetRange;
     }
 
-    public static double[] getRecommendedAirQuality(TimeOfYear currentTimeOfYear, Fullness currentFullness) {
-        double[] airQualityRange = new double[2];
+    public static int[] getRecommendedAirQuality(TimeOfYear currentTimeOfYear, Fullness currentFullness) {
+        int[] airQualityRange = new int[2];
 
         if (currentTimeOfYear == TimeOfYear.Осень) {
             if (currentFullness == Fullness.Высокая) {
-                airQualityRange[0] = 75.0;
-                airQualityRange[1] = 85.0;
+                airQualityRange[0] = 75;
+                airQualityRange[1] = 85;
             } else if (currentFullness == Fullness.Средняя) {
-                airQualityRange[0] = 70.0;
-                airQualityRange[1] = 80.0;
+                airQualityRange[0] = 70;
+                airQualityRange[1] = 80;
             } else { // Низкая
-                airQualityRange[0] = 65.0;
-                airQualityRange[1] = 75.0;
+                airQualityRange[0] = 65;
+                airQualityRange[1] = 75;
             }
         } else {
             if (currentFullness == Fullness.Высокая) {
-                airQualityRange[0] = 70.0;
-                airQualityRange[1] = 80.0;
+                airQualityRange[0] = 70;
+                airQualityRange[1] = 80;
             } else if (currentFullness == Fullness.Средняя) {
-                airQualityRange[0] = 65.0;
-                airQualityRange[1] = 75.0;
+                airQualityRange[0] = 65;
+                airQualityRange[1] = 75;
             } else { // Низкая
-                airQualityRange[0] = 60.0;
-                airQualityRange[1] = 70.0;
+                airQualityRange[0] = 60;
+                airQualityRange[1] = 70;
             }
         }
 
