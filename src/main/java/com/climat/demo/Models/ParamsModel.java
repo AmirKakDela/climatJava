@@ -2,7 +2,7 @@ package com.climat.demo.Models;
 
 public class ParamsModel {
 
-    private int id;
+    private int userId = 1;
     private String airMax;
 
     private String airMin;
@@ -15,8 +15,8 @@ public class ParamsModel {
 
     private String wetMin;
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
     public String getAirMax() {

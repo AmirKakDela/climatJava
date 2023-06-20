@@ -8,68 +8,59 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
-            prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.climat.demo.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.climat.demo.MainController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bdd4ea" height="38.0" layoutX="-6.0" stroke="BLACK"
-                   strokeType="INSIDE" width="707.0"/>
-        <Label layoutX="14.0" layoutY="72.0" prefHeight="18.0" prefWidth="104.0" style="-fx-font-weight: bold;"
-               text="Температура C"/>
-        <Label layoutX="12.0" layoutY="149.0" style="-fx-font-weight: bold;" text="Влажность %"/>
-        <Label layoutX="10.0" layoutY="226.0" style="-fx-font-weight: bold;" text="Качество воздуха %"/>
-        <Label layoutX="20.0" layoutY="94.0" text="Min"/>
-        <Label layoutX="73.0" layoutY="94.0" text="Max"/>
-        <TextField fx:id="tempMin" layoutX="13.0" layoutY="112.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="tempMax" layoutX="67.0" layoutY="112.0" prefHeight="26.0" prefWidth="34.0"/>
-        <Button layoutX="21.0" layoutY="309.0" mnemonicParsing="false" onAction="#save" text="Сохранить"/>
-        <Text fx:id="date" layoutX="105.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="123"/>
-        <Text layoutX="21.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата и время:"/>
-        <Label layoutX="14.0" layoutY="48.0" prefHeight="18.0" prefWidth="141.0" style="-fx-font-weight: bold;"
-               text="Установите значения:"/>
-        <Label layoutX="186.0" layoutY="48.0" prefHeight="18.0" prefWidth="81.0" text="Время года"/>
-        <Label layoutX="280.0" layoutY="48.0" prefHeight="18.0" prefWidth="83.0" text="Время суток"/>
-        <Label layoutX="379.0" layoutY="48.0" prefHeight="18.0" prefWidth="104.0" text="Заполненность"/>
-        <Label layoutX="521.0" layoutY="48.0" prefHeight="18.0" prefWidth="172.0" style="-fx-font-weight: bold;"
-               text="Рекомендуемые значения"/>
-        <Label layoutX="181.0" layoutY="215.0" prefHeight="18.0" prefWidth="126.0" text="Мощность системы"/>
-        <Label layoutX="332.0" layoutY="217.0" prefHeight="18.0" prefWidth="141.0" text="Реальные показатели"/>
-        <Label layoutX="332.0" layoutY="255.0" prefHeight="18.0" prefWidth="104.0" text="Температура C"/>
-        <Label layoutX="332.0" layoutY="295.0" text="Влажность %"/>
-        <Label layoutX="329.0" layoutY="335.0" text="Качество воздуха %"/>
-        <Button layoutX="619.0" layoutY="442.0" mnemonicParsing="false" onAction="#close" text="Выход"/>
-        <Label layoutX="22.0" layoutY="171.0" text="Min"/>
-        <Label layoutX="75.0" layoutY="171.0" text="Max"/>
-        <TextField fx:id="wetMin" layoutX="15.0" layoutY="189.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="wetMax" layoutX="69.0" layoutY="189.0" prefHeight="26.0" prefWidth="34.0"/>
-        <Label layoutX="21.0" layoutY="250.0" text="Min"/>
-        <Label layoutX="74.0" layoutY="250.0" text="Max"/>
-        <TextField fx:id="airMin" layoutX="14.0" layoutY="268.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="airMax" layoutX="68.0" layoutY="268.0" prefHeight="26.0" prefWidth="34.0"/>
-        <Label layoutX="552.0" layoutY="68.0" prefHeight="18.0" prefWidth="104.0" style="-fx-font-weight: bold;"
-               text="Температура C"/>
-        <Label layoutX="550.0" layoutY="145.0" style="-fx-font-weight: bold;" text="Влажность %"/>
-        <Label layoutX="548.0" layoutY="222.0" style="-fx-font-weight: bold;" text="Качество воздуха %"/>
-        <Label layoutX="558.0" layoutY="90.0" text="Min"/>
-        <Label layoutX="611.0" layoutY="90.0" text="Max"/>
-        <TextField fx:id="suggestTempMin" layoutX="551.0" layoutY="108.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="suggestTempMax" layoutX="605.0" layoutY="108.0" prefHeight="26.0" prefWidth="34.0"/>
-        <Label layoutX="560.0" layoutY="167.0" text="Min"/>
-        <Label layoutX="613.0" layoutY="167.0" text="Max"/>
-        <TextField fx:id="suggestWetMin" layoutX="553.0" layoutY="185.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="suggestWetMax" layoutX="607.0" layoutY="185.0" prefHeight="26.0" prefWidth="34.0"/>
-        <Label layoutX="559.0" layoutY="246.0" text="Min"/>
-        <Label layoutX="612.0" layoutY="246.0" text="Max"/>
-        <TextField fx:id="suggestAirMin" layoutX="552.0" layoutY="264.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="suggestAirMax" layoutX="606.0" layoutY="264.0" prefHeight="26.0" prefWidth="34.0"/>
-        <ListView fx:id="timeOfYear" layoutX="186.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0"/>
-        <ListView fx:id="timeOfDay" layoutX="281.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0"/>
-        <ListView fx:id="fullness" layoutX="379.0" layoutY="82.0" prefHeight="112.0" prefWidth="81.0"/>
-        <ListView fx:id="systemPower" layoutX="186.0" layoutY="248.0" prefHeight="112.0" prefWidth="81.0"/>
-        <TextField fx:id="wetMin311" layoutX="456.0" layoutY="251.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="wetMin3111" layoutX="456.0" layoutY="290.0" prefHeight="26.0" prefWidth="34.0"/>
-        <TextField fx:id="wetMin31111" layoutX="456.0" layoutY="330.0" prefHeight="26.0" prefWidth="34.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bdd4ea" height="38.0" layoutX="-6.0" stroke="BLACK" strokeType="INSIDE" width="707.0" />
+        <Label layoutX="14.0" layoutY="72.0" prefHeight="18.0" prefWidth="104.0" style="-fx-font-weight: bold;" text="Температура C" />
+        <Label layoutX="12.0" layoutY="149.0" style="-fx-font-weight: bold;" text="Влажность %" />
+        <Label layoutX="10.0" layoutY="226.0" style="-fx-font-weight: bold;" text="Качество воздуха %" />
+        <Label layoutX="20.0" layoutY="94.0" text="Min" />
+        <Label layoutX="73.0" layoutY="94.0" text="Max" />
+        <TextField fx:id="tempMin" layoutX="13.0" layoutY="112.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="tempMax" layoutX="67.0" layoutY="112.0" prefHeight="26.0" prefWidth="34.0" />
+        <Button layoutX="21.0" layoutY="309.0" mnemonicParsing="false" onAction="#save" text="Сохранить" />
+        <Text fx:id="date" layoutX="105.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="123" />
+        <Text layoutX="21.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата и время:" />
+        <Label layoutX="14.0" layoutY="48.0" prefHeight="18.0" prefWidth="141.0" style="-fx-font-weight: bold;" text="Установите значения:" />
+        <Label layoutX="186.0" layoutY="48.0" prefHeight="18.0" prefWidth="81.0" text="Время года" />
+        <Label layoutX="280.0" layoutY="48.0" prefHeight="18.0" prefWidth="83.0" text="Время суток" />
+        <Label layoutX="379.0" layoutY="48.0" prefHeight="18.0" prefWidth="104.0" text="Заполненность" />
+        <Label layoutX="521.0" layoutY="48.0" prefHeight="18.0" prefWidth="172.0" style="-fx-font-weight: bold;" text="Рекомендуемые значения" />
+        <Label layoutX="181.0" layoutY="215.0" prefHeight="18.0" prefWidth="126.0" text="Мощность системы" />
+        <Label layoutX="332.0" layoutY="217.0" prefHeight="18.0" prefWidth="141.0" text="Реальные показатели" />
+        <Label layoutX="332.0" layoutY="255.0" prefHeight="18.0" prefWidth="104.0" text="Температура C" />
+        <Label layoutX="332.0" layoutY="295.0" text="Влажность %" />
+        <Label layoutX="329.0" layoutY="335.0" text="Качество воздуха %" />
+        <Button layoutX="619.0" layoutY="442.0" mnemonicParsing="false" onAction="#close" text="Выход" />
+        <Label layoutX="22.0" layoutY="171.0" text="Min" />
+        <Label layoutX="75.0" layoutY="171.0" text="Max" />
+        <TextField fx:id="wetMin" layoutX="15.0" layoutY="189.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="wetMax" layoutX="69.0" layoutY="189.0" prefHeight="26.0" prefWidth="34.0" />
+        <Label layoutX="21.0" layoutY="250.0" text="Min" />
+        <Label layoutX="74.0" layoutY="250.0" text="Max" />
+        <TextField fx:id="airMin" layoutX="14.0" layoutY="268.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="airMax" layoutX="68.0" layoutY="268.0" prefHeight="26.0" prefWidth="34.0" />
+        <Label layoutX="552.0" layoutY="68.0" prefHeight="18.0" prefWidth="104.0" style="-fx-font-weight: bold;" text="Температура C" />
+        <Label layoutX="550.0" layoutY="145.0" style="-fx-font-weight: bold;" text="Влажность %" />
+        <Label layoutX="548.0" layoutY="222.0" style="-fx-font-weight: bold;" text="Качество воздуха %" />
+        <Label layoutX="558.0" layoutY="90.0" text="Min" />
+        <Label layoutX="611.0" layoutY="90.0" text="Max" />
+        <TextField fx:id="suggestTempMin" layoutX="551.0" layoutY="108.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="suggestTempMax" layoutX="605.0" layoutY="108.0" prefHeight="26.0" prefWidth="34.0" />
+        <Label layoutX="560.0" layoutY="167.0" text="Min" />
+        <Label layoutX="613.0" layoutY="167.0" text="Max" />
+        <TextField fx:id="suggestWetMin" layoutX="553.0" layoutY="185.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="suggestWetMax" layoutX="607.0" layoutY="185.0" prefHeight="26.0" prefWidth="34.0" />
+        <Label layoutX="559.0" layoutY="246.0" text="Min" />
+        <Label layoutX="612.0" layoutY="246.0" text="Max" />
+        <TextField fx:id="suggestAirMin" layoutX="552.0" layoutY="264.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="suggestAirMax" layoutX="606.0" layoutY="264.0" prefHeight="26.0" prefWidth="34.0" />
+        <ListView fx:id="timeOfYear" layoutX="186.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0" />
+        <ListView fx:id="timeOfDay" layoutX="281.0" layoutY="81.0" prefHeight="112.0" prefWidth="81.0" />
+        <ListView fx:id="fullness" layoutX="379.0" layoutY="82.0" prefHeight="112.0" prefWidth="81.0" />
+        <ListView fx:id="systemPower" layoutX="186.0" layoutY="248.0" prefHeight="112.0" prefWidth="81.0" />
+        <TextField fx:id="realTemp" editable="false" layoutX="456.0" layoutY="251.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="realWet" editable="false" layoutX="456.0" layoutY="290.0" prefHeight="26.0" prefWidth="34.0" />
+        <TextField fx:id="realAir" editable="false" layoutX="456.0" layoutY="330.0" prefHeight="26.0" prefWidth="34.0" />
     </children>
 </AnchorPane>

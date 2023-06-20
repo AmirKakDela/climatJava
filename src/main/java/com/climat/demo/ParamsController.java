@@ -3,6 +3,7 @@ package com.climat.demo;
 import com.climat.demo.Models.ParamsModel;
 import com.climat.demo.database.DBConnection;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,15 +24,23 @@ public class ParamsController {
     }
 
     public void save(ParamsModel paramsModel) {
-//        ResultSet rs = DBConnection.getInstance().getStatement().executeQuery(
-//                "INSERT INTO table_name (param_id, air_max, air_min, wet_min, wet_max, temp_max, temp_min)\n" +
-//                "VALUES (1, '', 'value2', ...)\n" +
-//                "ON DUPLICATE KEY UPDATE\n" +
-//                "    air_max = VALUES(air_max),\n" +
-//                "    air_min = VALUES(column2),\n" +
-//                "    wet_min = VALUES(wet_min),\n" +
-//                "    air_min = VALUES(column2),\n" +
-//                "    air_min = VALUES(column2),\n" +
-//                "    air_min = VALUES(column2),\n");
+        String sql = "UPDATE climat.params " +
+                "SET air_max = ?, air_min = ?, temp_max = ?, temp_min = ?, wet_max = ?, wet_min = ? " +
+                "WHERE user_id = ?";
+
+        try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql)) {
+            statement.setString(1, paramsModel.getAirMax());
+            statement.setString(2, paramsModel.getAirMin());
+            statement.setString(3, paramsModel.getTempMax());
+            statement.setString(4, paramsModel.getTempMin());
+            statement.setString(5, paramsModel.getWetMax());
+            statement.setString(6, paramsModel.getWetMin());
+            statement.setInt(7, paramsModel.getUserId());
+
+            int rowsAffected = statement.executeUpdate();
+            System.out.println("Rows affected: " + rowsAffected);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

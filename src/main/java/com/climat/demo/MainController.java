@@ -14,11 +14,21 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
     ParamsController paramsController = new ParamsController();
+
+    @FXML
+    private TextField realAir;
+
+    @FXML
+    private TextField realTemp;
+
+    @FXML
+    private TextField realWet;
 
     @FXML
     private ListView<TimeOfDay> timeOfDay;
@@ -74,6 +84,7 @@ public class MainController implements Initializable {
     @FXML
     void save(ActionEvent event) {
         System.out.println("save");
+        paramsController.save(getParamsModel());
     }
 
     @Override
@@ -81,6 +92,7 @@ public class MainController implements Initializable {
         initializeLists();
         setListenersOnLists();
         setSuggestParamsByListValues();
+        setRandomRealValues();
         try {
             ParamsModel paramsModel = paramsController.getParams(1);
             setTextFields(paramsModel);
@@ -100,6 +112,19 @@ public class MainController implements Initializable {
         tempMax.setText(paramsModel.getTempMax());
         wetMin.setText(paramsModel.getWetMin());
         wetMax.setText(paramsModel.getWetMax());
+    }
+
+    public ParamsModel getParamsModel() {
+        ParamsModel paramsModel = new ParamsModel();
+
+        paramsModel.setAirMin(airMin.getText());
+        paramsModel.setAirMax(airMax.getText());
+        paramsModel.setTempMin(tempMin.getText());
+        paramsModel.setTempMax(tempMax.getText());
+        paramsModel.setWetMin(wetMin.getText());
+        paramsModel.setWetMax(wetMax.getText());
+
+        return paramsModel;
     }
 
     public void close(ActionEvent actionEvent) {
@@ -161,5 +186,21 @@ public class MainController implements Initializable {
         fullness.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             setSuggestParamsByListValues();
         });
+    }
+
+    public void setRandomRealValues() {
+        Random random = new Random();
+
+        // Генерация случайного значения для влажности (от 40 до 60)
+        int humidity = random.nextInt(21) + 40;
+        realWet.setText(String.valueOf(humidity));
+
+        // Генерация случайного значения для температуры (от 18 до 25)
+        int temperature = random.nextInt(8) + 18;
+        realTemp.setText(String.valueOf(temperature));
+
+        // Генерация случайного значения для качества воздуха (от 30 до 90)
+        int airQuality = random.nextInt(61) + 30;
+        realAir.setText(String.valueOf(airQuality));
     }
 }
